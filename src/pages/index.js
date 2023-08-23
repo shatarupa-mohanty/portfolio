@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import { BsFillMoonStarsFill } from 'react-icons/bs'
+import { BsFillMoonStarsFill, BsSun } from 'react-icons/bs'
 import { AiFillLinkedin, AiFillMail, AiFillGithub } from "react-icons/ai"
-import deved from "/public/dev-ed-wave.png"
+import deved from "public/girl.jpg"
 import design from "public/design.png"
 import consulting from "public/consulting.png"
 import code from "public/code.png"
@@ -18,10 +18,12 @@ export default function Home() {
     <div className={darkMode ? "dark" : ""}>
       <main className=' bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
         <section className=" min-h-screen">
-          <nav className=' py-10 mb-12 flex justify-between'>
+          <nav className=' flex justify-between py-10 mb-12'>
+            {/* py-10 mb-12 flex justify-between sticky top-0 */}
             <h1 className=' text-xl font-Burtons dark:text-white'>developedbysm</h1>
             <ul className='flex items-center'>
-              <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className=' cursor-pointer text-2xl' /></li>
+              <li><button onClick={() => setDarkMode(!darkMode)} className=' cursor-pointer text-2xl px-4 py-2 ml-8 '>{darkMode ? <BsSun className=' fill-white' /> : <BsFillMoonStarsFill />}</button></li>
+              {/* <li><button onClick={}></button></li> */}
               <li><a className=' bg-gradient-to-r from-cyan-500 to-teal-500 bg-cyan-500 text-white px-4 py-2 rounded-md ml-8' href="#">Resume</a></li>
             </ul>
           </nav>
@@ -33,12 +35,13 @@ export default function Home() {
             </p>
           </div>
           <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600'>
-            <AiFillGithub />
-            <AiFillLinkedin />
-            <AiFillMail />
+            <a href="https://github.com/shatarupa-mohanty" ><AiFillGithub className=' hover:text-teal-600' /></a>
+            <a href='https://www.linkedin.com/in/shatarupa-mohanty-059747238/'><AiFillLinkedin className='hover:text-teal-600' /></a>
+            {/* <IconButton></IconButton> */}
+            <a href='mailto://naina002002@gmail.com'><AiFillMail className='hover:text-teal-600' /></a>
           </div>
-          <div className='relative mx-auto bg-gradient-to-b from from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96'>
-            <Image src={deved} layout='fill' objectFit='cover'></Image>
+          <div className=' mx-auto border border-teal-600 border-3 rounded-full w-70 h-70 mt-20 overflow-hidden md:h-96 md:w-96'>
+            <Image src={deved} className='w-70 h-70'></Image>
           </div>
         </section>
         <section>
@@ -49,44 +52,56 @@ export default function Home() {
               <span className='text-teal-500'>Not that great</span> in my job but I'm <span className='text-teal-500'>learning</span>.
             </p>
             <p className='dark:text-white'>Thing that keep me sane in this insane world are <span className='text-teal-500'>writing</span>, <span className='text-teal-500'>drawing</span> and
-              <span className='text-teal-500'>teaching</span>
+              <span className='text-teal-500'> teaching</span>
             </p>
           </div>
-          <div className='lg:flex gap-10'>
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white'>
+          <div className='lg:flex justify-between gap-10'>
+            <div className='text-center shadow-lg p-5 rounded-xl my-10 dark:bg-white min-w-[25%]' >
               <Image src={design} width={100} height={100} className=' mx-auto ' />
-              <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-              <p className='py-2'>
-                Creating elegant designs suited for your n design theory.
+              <h3 className='text-lg font-medium pt-8 pb-2'>Education</h3>
+              <p className='py-2 text-teal-700 font-medium'>
+                Schooling
               </p>
-              <h4 className='py-4 text-teal-600'>Design tools i use</h4>
-              <p className=' text-gray-800 py-1'>Photoshop</p>
-              <p className=' text-gray-800 py-1'>Illustrator</p>
-              <p className=' text-gray-800 py-1'>Figma</p>
+              <h4 className='py-4 '>DAV Public School , Pokhariput</h4>
+              <p className=' text-gray-800 py-1'>2006-20</p>
+              <p className=' text-gray-800 py-1'>10th : 93.2%</p>
+              <p className=' text-gray-800 py-1'>12th : 95.4%</p>
 
             </div>
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white'>
+            <div className='text-center shadow-lg p-5 rounded-xl my-10 dark:bg-white min-w-[25%]'>
+              <Image src={design} width={100} height={100} className=' mx-auto ' />
+              <h3 className='text-lg font-medium pt-8 pb-2'>Education</h3>
+              <p className='py-2 text-teal-700 font-medium'>
+                Graduation
+              </p>
+              <h4 className='py-4 '>Odisha University Of Technology and Research</h4>
+              <p className=' text-gray-800 py-1'>2020-present</p>
+              <p className=' text-gray-800 py-1'>CSE</p>
+              <p className=' text-gray-800 py-1'>GPA:9.72</p>
+
+            </div>
+            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white min-w-[25%]'>
               <Image src={code} width={100} height={100} className=' mx-auto' />
-              <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-              <p className='py-2'>
-                Creating elegant designs suited for your n design theory.
+              <h3 className='text-lg font-medium pt-8 pb-2'>Learnings</h3>
+              <p className='py-2 text-teal-700 font-medium'>
+                In Progress
               </p>
-              <h4 className='py-4 text-teal-600'>Design tools i use</h4>
-              <p className=' text-gray-800 py-1'>Photoshop</p>
-              <p className=' text-gray-800 py-1'>Illustrator</p>
-              <p className=' text-gray-800 py-1'>Figma</p>
+              <h4 className='py-4'>Tech It Is</h4>
+              <p className=' text-gray-800 py-1'>Javascript</p>
+              <p className=' text-gray-800 py-1'>React</p>
+              <p className=' text-gray-800 py-1'></p>
 
             </div>
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white'>
+            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white min-w-[25%]'>
               <Image src={consulting} width={100} height={100} className=' mx-auto' />
-              <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-              <p className='py-2'>
-                Creating elegant designs suited for your n design theory.
+              <h3 className='text-lg font-medium pt-8 pb-2'>Hobbies</h3>
+              <p className='py-2 text-teal-700 font-medium'>
+                Me Time
               </p>
-              <h4 className='py-4 text-teal-600'>Design tools i use</h4>
-              <p className=' text-gray-800 py-1'>Photoshop</p>
-              <p className=' text-gray-800 py-1'>Illustrator</p>
-              <p className=' text-gray-800 py-1'>Figma</p>
+              <h4 className='py-4'>Yoga Above All</h4>
+              <p className=' text-gray-800 py-1'>Painting</p>
+              <p className=' text-gray-800 py-1'>Dancing</p>
+              <p className=' text-gray-800 py-1'>Writing</p>
 
             </div>
           </div>
@@ -112,6 +127,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </div>
+    </div >
   )
 }
